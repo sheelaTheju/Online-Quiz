@@ -1,0 +1,32 @@
+
+<div ng-hide="finalreportpage">
+	
+<div ng-hide="Skippedqn">
+	<div ng-hide="anssubmitted">
+<p>{{questionAssigned.Question}}</p>
+<div ng-repeat="m in questionAssigned.opt" ><input class="ansContainer" type="radio" value="{{m}}" id="{{m}}" name="answer" /><label for="{{m}}">{{m}}</label></div>
+
+<div>
+<input type="button" value="skipped" ng-click="skipped()"/>
+<input type="button" value="submit" ng-click="submit()"/>
+</div>
+</div>
+<div ng-show="anssubmitted">
+<div ng-show="correctans">You have choosen Correct ans.</div>
+<div ng-show="incorrectans">You have choosen Incorrect ans.</div>
+
+ <input type="button" value="Next" ng-click="Next()"/>
+</div>
+</div>
+</div>
+<div ng-show="finalreportpage">
+	<p>You are Completed the Test</p>
+	<p> You Obtained {{percentageObtained}}%</p>
+	<div ng-show="percentageObtained<80">You Scored less than 80% .Please select For retake the Course.<input type="button" value="Retake Course" ng-click="retakeCourse()"/></div>
+	<div ng-show="percentageObtained>=80">You Scored More than 80% .Please select For Improvement the Marks.<input type="button" value="Improvement Mark" ng-click="improvementMark()"/></div>
+</div>
+<div ng-show="Skippedqn">
+	You have skipped {{skippedQuestionCount}} Question.you want to complete the assesment without consideration of that qn.
+	</br><input type="button" value="Take Partial Course" ng-click="partialAssesment()"/></br>
+	<input type="button" value="Take Whole Test" ng-click="improvementMark()"/>
+</div>

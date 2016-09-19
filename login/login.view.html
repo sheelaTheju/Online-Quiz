@@ -1,0 +1,46 @@
+
+
+<div class="w3-row">
+  <div class="w3-half w3-container w3-green" id="LoginContainer">
+    
+</div>
+  <div class="w3-half w3-container w3-blue" id="LoginContainer" style="position: absolute;
+    margin-left: 20%;margin-top: 10%;">
+    
+    <div class="w3-row">
+      
+      <div class="box" id="loginBox">
+      <h4 style="text-align:center">Welcome to Agile Project</h3>
+      <h4 style="text-align:center">Management Course.</h3></br></br>
+      
+      
+       <form name="form" ng-submit="vm.login()" role="form">
+       <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+      <label for="username" class="lable">User Name</label>
+      <input type="text" placeholder="Username" name="username" id="username" class="form-control" ng-model="vm.username" required />
+
+       <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+       </div>
+
+       <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+      <label  for="password" class="lable">Password</label>
+      <input type="password" placeholder="Password" name="password" id="password" class="form-control" ng-model="vm.password" required />
+
+      <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+
+      </div>
+
+      <div class="form-actions">
+      <button id="primaryButton" type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary" id="primaryButton" >Login</button></br></br>
+      </div>
+
+      </form>
+
+    </div>
+    </div>
+  </div>
+</div>
+
+
+
+
